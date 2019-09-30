@@ -351,6 +351,7 @@
 
               if (modelDate instanceof Date){
                 modelDate = new Date(modelDate.getTime());
+                modelDate.setDate(1); // dateが月末だと意図しない動きになるので一度月初にする
                 modelDate.setYear($scope.year);
                 modelDate.setMonth($scope.monthNumber - 1);
                 modelDate.setDate($scope.day);
