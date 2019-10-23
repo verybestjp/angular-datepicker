@@ -969,8 +969,8 @@
         if (checkToggle()) {
 
           thisInput.on('click', function onFocusAndClick(event) {
-            if (event.target.nodeName !== 'INPUT') {
-              // input以外の場合は無視する
+            if (event.target.nodeName !== 'INPUT' && event.target.nodeName !== 'BUTTON') {
+              // input, button以外の場合は無視する
               return;
             }
             if (event.target.type !== 'button') {
@@ -992,8 +992,8 @@
           });
 
           thisInput.on('focusin focus', function onFocusAndClick(event) {
-            if (event.target.nodeName !== 'INPUT') {
-              // input以外の場合は無視する
+            if (event.target.nodeName !== 'INPUT' && event.target.nodeName !== 'BUTTON') {
+              // input, button以外の場合は無視する
               return;
             }
             if (event.target.type === 'button') {
